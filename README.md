@@ -11,7 +11,7 @@ https://nexora-ecommerce.onrender.com/
 
 ## 💻 GitHub Repository
 
-🔗 https://github.com/Stephenpaul07/nexora-ecommerce
+🔗 https://github.com/Stephenpaul07/nexora
 
 ---
 
@@ -119,7 +119,7 @@ Nexora
 Clone the repository
 
 ```bash
-git clone https://github.com/Stephenpaul07/nexora-ecommerce.git
+git clone https://github.com/Stephenpaul07/nexora.git
 ```
 
 Navigate to the project
