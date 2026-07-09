@@ -1,0 +1,268 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="py-5">
+<div class="container">
+
+<div class="row">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="col-lg-3 mb-4">
+
+        <div class="category-card">
+
+            <h5 class="fw-bold mb-4">
+                Categories
+            </h5>
+
+            <a href="{% url 'store' %}" class="category-link">
+                All Products
+            </a>
+
+            {% for category in links %}
+
+            <a href="{{ category.get_url }}" class="category-link">
+                {{ category.category_name }}
+            </a>
+
+            {% endfor %}
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <main class="col-lg-9">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            {% if 'search' in request.path %}
+                <h3 class="fw-bold">Search Results</h3>
+            {% else %}
+                <h3 class="fw-bold">Our Collection</h3>
+            {% endif %}
+
+            <span class="text-muted">
+                {{ product_count }} Products
+            </span>
+
+        </div>
+
+        {% if products %}
+
+        <div class="row g-4">
+
+            {% for product in products %}
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="product-card">
+
+                    <a href="{{ product.get_url }}">
+
+                        <div class="product-image">
+
+                            <img src="{{ product.images.url }}">
+
+                        </div>
+
+                    </a>
+
+                    <div class="p-3">
+
+                        <h6 class="fw-semibold">
+                            {{ product.product_name }}
+                        </h6>
+
+                        <h5 class="text-primary fw-bold mb-3">
+                            ₹{{ product.price }}
+                        </h5>
+
+                        <a href="{{ product.get_url }}"
+                           class="btn btn-primary w-100">
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="text-center py-5">
+
+            <img src="{% static 'images/empty.png' %}"
+                 width="180">
+
+            <h3 class="mt-4">
+                No Products Found
+            </h3>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- PAGINATION -->
+
+        <nav class="mt-5">
+
+            {% if products.has_other_pages %}
+
+            <ul class="pagination justify-content-center">
+
+                {% if products.has_previous %}
+                <li class="page-item">
+                    <a class="page-link"
+                       href="?page={{ products.previous_page_number }}">
+                        Previous
+                    </a>
+                </li>
+                {% endif %}
+
+                {% for i in products.paginator.page_range %}
+
+                    {% if products.number == i %}
+
+                        <li class="page-item active">
+                            <span class="page-link">{{ i }}</span>
+                        </li>
+
+                    {% else %}
+
+                        <li class="page-item">
+                            <a class="page-link"
+                               href="?page={{ i }}">
+                                {{ i }}
+                            </a>
+                        </li>
+
+                    {% endif %}
+
+                {% endfor %}
+
+                {% if products.has_next %}
+
+                <li class="page-item">
+                    <a class="page-link"
+                       href="?page={{ products.next_page_number }}">
+                        Next
+                    </a>
+                </li>
+
+                {% endif %}
+
+            </ul>
+
+            {% endif %}
+
+        </nav>
+
+    </main>
+
+</div>
+
+</div>
+</section>
+
+
+<style>
+
+.category-card{
+
+background:#fff;
+padding:30px;
+border-radius:18px;
+box-shadow:0 15px 35px rgba(0,0,0,.06);
+
+}
+
+.category-link{
+
+display:block;
+padding:12px 16px;
+margin-bottom:10px;
+border-radius:12px;
+text-decoration:none;
+color:#222;
+transition:.3s;
+
+}
+
+.category-link:hover{
+
+background:#5B4BFF;
+color:#fff;
+
+}
+
+.product-card{
+
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+transition:.35s;
+
+}
+
+.product-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.product-image{
+
+height:280px;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+background:#fafafa;
+
+}
+
+.product-image img{
+
+max-height:230px;
+max-width:100%;
+object-fit:contain;
+
+}
+
+.btn-primary{
+
+background:#5B4BFF;
+border:none;
+border-radius:12px;
+
+}
+
+.btn-primary:hover{
+
+background:#4635f3;
+
+}
+
+.pagination .page-link{
+
+border-radius:10px;
+margin:0 4px;
+
+}
+
+</style>
+
+{% endblock %}

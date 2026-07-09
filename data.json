@@ -1,0 +1,1077 @@
+[
+{
+  "model": "sessions.session",
+  "pk": "jztai367srtyltlve441ivyt2f1vot4i",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGln-rZ1Q0nMGa71e4wBypDipEHeHSCmgfTPzXiLitta4dV7ilMVZaHH63RLSg9sO8h3bbZY0t3WZktwVedAur3Pm5-Vw_w4q9vqtjTWYlQkAPjNB4eKLsk4NDCMZzZzAWg00jI6CB882MCbjtdMqYfHi_QHZlzec:1whhzB:EdYVqJ9wVnFHr-rAo-kCtA9Wlng0LHzUk5WrDVOGKRw",
+    "expire_date": "2026-07-23T06:11:49.145Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "lhdpbbk5shl5erxman8qsg5ok2nv7av5",
+  "fields": {
+    "session_data": "e30:1whUB0:JPMEK5aGZqRJjzgCCQuxjqYUlBZo39B0YHX_Vf5BODU",
+    "expire_date": "2026-07-22T15:27:06.363Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "mxflc1wtqd8kwpahel3rvn66d728nktw",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGln-rZ1Q0nMGa71e4wBypDipEHeHSCmgfTPzXiLitta4dV7ilMVZaHH63RLSg9sO8h3bbZY0t3WZktwVedAur3Pm5-Vw_w4q9vqtjTWYlQkAPjNB4eKLsk4NDCMZzZzAWg00jI6CB882MCbjtdMqYfHi_QHZlzec:1whUDK:9KO9F-SegDajBVi8_5ueRgN3Qo0iMNq9n7vhph00DCA",
+    "expire_date": "2026-07-22T15:29:30.724Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "zf56zxh7vvr2wz378epuxh2olanoyz7e",
+  "fields": {
+    "session_data": "e30:1whWaE:R0OPneKoIR79D6_gRCbC_Ps_VCB4fR2rb0B4Wh_iGrc",
+    "expire_date": "2026-07-22T18:01:18.133Z"
+  }
+},
+{
+  "model": "category.category",
+  "pk": 1,
+  "fields": {
+    "category_name": "Fashion",
+    "slug": "fashion",
+    "description": "",
+    "cat_image": ""
+  }
+},
+{
+  "model": "category.category",
+  "pk": 2,
+  "fields": {
+    "category_name": "Electronics",
+    "slug": "electronics",
+    "description": "",
+    "cat_image": ""
+  }
+},
+{
+  "model": "category.category",
+  "pk": 3,
+  "fields": {
+    "category_name": "Shoes",
+    "slug": "shoes",
+    "description": "",
+    "cat_image": ""
+  }
+},
+{
+  "model": "category.category",
+  "pk": 4,
+  "fields": {
+    "category_name": "Watches",
+    "slug": "watches",
+    "description": "",
+    "cat_image": ""
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$ucznz1SP34KgLLygsXzdU0$Tw/8TqeEeecSexDEsdlUokeeVYe7O6I2ikPsw040QNM=",
+    "first_name": "Admin",
+    "last_name": "User",
+    "username": "adminbro",
+    "email": "admin@test.com",
+    "phone_number": "",
+    "date_joined": "2026-07-08T10:22:56.370Z",
+    "last_login": "2026-07-09T06:11:49.141Z",
+    "is_admin": true,
+    "is_staff": true,
+    "is_active": true,
+    "is_superadmin": true
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$Wuvag2Bq2wcqpdskXp2tvu$MqtpXVp/zhdFzX7FmBeoGA0RiqREx8BNZ+CUDlhG/mo=",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "username": "stephen",
+    "email": "stephen@test.com",
+    "phone_number": "06305989065",
+    "date_joined": "2026-07-08T17:32:27.903Z",
+    "last_login": "2026-07-08T17:32:27.903Z",
+    "is_admin": false,
+    "is_staff": false,
+    "is_active": false,
+    "is_superadmin": false
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$X3r4aWJD9BgKPmbPLBDMwK$S7diJtfpzhSr3UjLF3aFyaGuZp+tIr49pGbUUzPsxo0=",
+    "first_name": "Anand",
+    "last_name": "Kondeparthi",
+    "username": "anand",
+    "email": "anand@test.com",
+    "phone_number": "9225989065",
+    "date_joined": "2026-07-08T17:55:18.360Z",
+    "last_login": "2026-07-08T17:55:18.360Z",
+    "is_admin": false,
+    "is_staff": false,
+    "is_active": false,
+    "is_superadmin": false
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$APJ8gO2e0uLMOMLeIgRdH9$LaLoNj6VeuaROtYKCHI4A23zRH3RBLlo6LUU9JjyRgQ=",
+    "first_name": "Anand",
+    "last_name": "Paul",
+    "username": "stephenkondeparthi",
+    "email": "stephenkondeparthi@gmail.com",
+    "phone_number": "9550162034",
+    "date_joined": "2026-07-09T04:36:53.155Z",
+    "last_login": "2026-07-09T04:36:53.155Z",
+    "is_admin": false,
+    "is_staff": false,
+    "is_active": false,
+    "is_superadmin": false
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$9mE4Lqsq5cq25yyzq4KtEb$uWc7iVe/4bAAwt22eZdRybjSFpjUnSunpUG/V1ak6XA=",
+    "first_name": "Anand",
+    "last_name": "Paul",
+    "username": "adjgftykclcl",
+    "email": "adjgftykclcl@gmail.com",
+    "phone_number": "9550162034",
+    "date_joined": "2026-07-09T04:42:06.866Z",
+    "last_login": "2026-07-09T04:42:06.867Z",
+    "is_admin": false,
+    "is_staff": false,
+    "is_active": false,
+    "is_superadmin": false
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$MexhAVj3IshS4hxDAruaI3$snCqPrnT5ZNGmnFYa6vG2EYL04vfwTjbXP/yESXb1rU=",
+    "first_name": "Anand",
+    "last_name": "Paul",
+    "username": "adjgftyklcl",
+    "email": "adjgftyklcl@gmail.com",
+    "phone_number": "9550162034",
+    "date_joined": "2026-07-09T04:48:19.799Z",
+    "last_login": "2026-07-09T04:56:13.804Z",
+    "is_admin": false,
+    "is_staff": false,
+    "is_active": true,
+    "is_superadmin": false
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$iG3mh2KfMxhEBiDR9xZdaT$sVXlMvIiRLxYa4bvga2013yrp9Vr8QO1r09rxoBO6l8=",
+    "first_name": "jvvulcas",
+    "last_name": "gcctrfku",
+    "username": "adjgflcl",
+    "email": "adjgflcl@gmail.com",
+    "phone_number": "1697865164",
+    "date_joined": "2026-07-09T04:58:45.617Z",
+    "last_login": "2026-07-09T05:18:59.139Z",
+    "is_admin": false,
+    "is_staff": false,
+    "is_active": true,
+    "is_superadmin": false
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$YtErXHYzUbvRrUi1NH7X20$Yf6cVfK+IyCsBXjXcWaNMSbnFvfS2QLIECcu4ceVYFs=",
+    "first_name": "rdrccredtvh",
+    "last_name": "vryetrv",
+    "username": "adcl",
+    "email": "adcl@gmail.com",
+    "phone_number": "61149898468",
+    "date_joined": "2026-07-09T05:00:07.261Z",
+    "last_login": "2026-07-09T05:00:07.261Z",
+    "is_admin": false,
+    "is_staff": false,
+    "is_active": true,
+    "is_superadmin": false
+  }
+},
+{
+  "model": "accounts.userprofile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "address_line_1": "",
+    "address_line_2": "",
+    "profile_picture": "",
+    "city": "",
+    "state": "",
+    "country": ""
+  }
+},
+{
+  "model": "accounts.userprofile",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "address_line_1": "",
+    "address_line_2": "",
+    "profile_picture": "default/default-user.png",
+    "city": "",
+    "state": "",
+    "country": ""
+  }
+},
+{
+  "model": "accounts.userprofile",
+  "pk": 3,
+  "fields": {
+    "user": 3,
+    "address_line_1": "",
+    "address_line_2": "",
+    "profile_picture": "default/default-user.png",
+    "city": "",
+    "state": "",
+    "country": ""
+  }
+},
+{
+  "model": "accounts.userprofile",
+  "pk": 4,
+  "fields": {
+    "user": 4,
+    "address_line_1": "",
+    "address_line_2": "",
+    "profile_picture": "default/default-user.png",
+    "city": "",
+    "state": "",
+    "country": ""
+  }
+},
+{
+  "model": "accounts.userprofile",
+  "pk": 5,
+  "fields": {
+    "user": 5,
+    "address_line_1": "",
+    "address_line_2": "",
+    "profile_picture": "default/default-user.png",
+    "city": "",
+    "state": "",
+    "country": ""
+  }
+},
+{
+  "model": "accounts.userprofile",
+  "pk": 6,
+  "fields": {
+    "user": 6,
+    "address_line_1": "",
+    "address_line_2": "",
+    "profile_picture": "default/default-user.png",
+    "city": "",
+    "state": "",
+    "country": ""
+  }
+},
+{
+  "model": "accounts.userprofile",
+  "pk": 7,
+  "fields": {
+    "user": 7,
+    "address_line_1": "",
+    "address_line_2": "",
+    "profile_picture": "default/default-user.png",
+    "city": "",
+    "state": "",
+    "country": ""
+  }
+},
+{
+  "model": "accounts.userprofile",
+  "pk": 8,
+  "fields": {
+    "user": 8,
+    "address_line_1": "",
+    "address_line_2": "",
+    "profile_picture": "default/default-user.png",
+    "city": "",
+    "state": "",
+    "country": ""
+  }
+},
+{
+  "model": "store.product",
+  "pk": 1,
+  "fields": {
+    "product_name": "Moto g19",
+    "slug": "moto-g19",
+    "description": "",
+    "price": 20000,
+    "images": "photos/products/-original-imahnfuypbu3zse3.webp",
+    "stock": 11,
+    "is_available": true,
+    "category": 2,
+    "created_date": "2026-07-08T16:27:44.266Z",
+    "modified_date": "2026-07-09T05:38:21.470Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 2,
+  "fields": {
+    "product_name": "Vivo",
+    "slug": "vivo",
+    "description": "",
+    "price": 60000,
+    "images": "photos/products/-original-imahjzxknyum2hqe.webp",
+    "stock": 19,
+    "is_available": true,
+    "category": 2,
+    "created_date": "2026-07-08T16:30:00.842Z",
+    "modified_date": "2026-07-09T05:46:20.826Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 3,
+  "fields": {
+    "product_name": "Samsung S25",
+    "slug": "samsung-s25",
+    "description": "",
+    "price": 75000,
+    "images": "photos/products/-original-imahgfmzrtryrszp.webp",
+    "stock": 2,
+    "is_available": true,
+    "category": 2,
+    "created_date": "2026-07-08T16:38:22.526Z",
+    "modified_date": "2026-07-08T16:38:22.526Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 4,
+  "fields": {
+    "product_name": "Oversized T shirt",
+    "slug": "oversized-t-shirt",
+    "description": "",
+    "price": 999,
+    "images": "photos/products/012a586fd7b60587924f4b5a6dedbeb775d3e93e.avif",
+    "stock": 10,
+    "is_available": true,
+    "category": 1,
+    "created_date": "2026-07-08T16:41:05.252Z",
+    "modified_date": "2026-07-08T16:41:05.252Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 5,
+  "fields": {
+    "product_name": "Oversized Pant",
+    "slug": "oversized-pant",
+    "description": "",
+    "price": 1999,
+    "images": "photos/products/08b723adafc18e68258bb6d1f9cc20915bd66c86.avif",
+    "stock": 5,
+    "is_available": true,
+    "category": 1,
+    "created_date": "2026-07-08T16:41:32.490Z",
+    "modified_date": "2026-07-08T16:41:32.490Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 6,
+  "fields": {
+    "product_name": "Shirt",
+    "slug": "shirt",
+    "description": "",
+    "price": 1799,
+    "images": "photos/products/1b996799991ed738655e108ebb528adda7b4f818.avif",
+    "stock": 2,
+    "is_available": true,
+    "category": 1,
+    "created_date": "2026-07-08T16:41:54.315Z",
+    "modified_date": "2026-07-08T16:41:54.315Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 7,
+  "fields": {
+    "product_name": "Casual T shirt",
+    "slug": "casual-t-shirt",
+    "description": "",
+    "price": 699,
+    "images": "photos/products/bee4d0b68eec7c47a473a26ce4f6cefe09aad4d6.avif",
+    "stock": 5,
+    "is_available": true,
+    "category": 1,
+    "created_date": "2026-07-08T16:42:20.748Z",
+    "modified_date": "2026-07-08T16:42:20.748Z"
+  }
+},
+{
+  "model": "store.variation",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "variation_category": "color",
+    "variation_value": "blue",
+    "is_active": true,
+    "created_date": "2026-07-08T16:33:45.127Z"
+  }
+},
+{
+  "model": "store.variation",
+  "pk": 2,
+  "fields": {
+    "product": 1,
+    "variation_category": "color",
+    "variation_value": "blue",
+    "is_active": true,
+    "created_date": "2026-07-08T16:34:08.385Z"
+  }
+},
+{
+  "model": "store.variation",
+  "pk": 3,
+  "fields": {
+    "product": 1,
+    "variation_category": "size",
+    "variation_value": "a",
+    "is_active": true,
+    "created_date": "2026-07-08T16:34:19.050Z"
+  }
+},
+{
+  "model": "store.variation",
+  "pk": 4,
+  "fields": {
+    "product": 2,
+    "variation_category": "color",
+    "variation_value": "black",
+    "is_active": true,
+    "created_date": "2026-07-08T16:35:34.137Z"
+  }
+},
+{
+  "model": "store.variation",
+  "pk": 5,
+  "fields": {
+    "product": 2,
+    "variation_category": "color",
+    "variation_value": "white",
+    "is_active": true,
+    "created_date": "2026-07-08T16:35:45.035Z"
+  }
+},
+{
+  "model": "store.variation",
+  "pk": 6,
+  "fields": {
+    "product": 2,
+    "variation_category": "size",
+    "variation_value": "NA",
+    "is_active": true,
+    "created_date": "2026-07-08T16:35:53.932Z"
+  }
+},
+{
+  "model": "store.reviewrating",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "user": 1,
+    "subject": "Superb product",
+    "review": "",
+    "rating": 4.5,
+    "ip": "127.0.0.1",
+    "status": true,
+    "created_at": "2026-07-08T17:03:44.271Z",
+    "updated_at": "2026-07-08T17:03:44.272Z"
+  }
+},
+{
+  "model": "store.reviewrating",
+  "pk": 2,
+  "fields": {
+    "product": 3,
+    "user": 7,
+    "subject": "",
+    "review": "",
+    "rating": 5.0,
+    "ip": "127.0.0.1",
+    "status": true,
+    "created_at": "2026-07-09T05:15:43.624Z",
+    "updated_at": "2026-07-09T05:15:43.624Z"
+  }
+},
+{
+  "model": "store.productgallery",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "image": "store/products/41jiQi8i3bL._SY300_SX300_QL70_FMwebp_.webp"
+  }
+},
+{
+  "model": "store.productgallery",
+  "pk": 2,
+  "fields": {
+    "product": 2,
+    "image": "store/products/-original-imahnhc3jzeqmvh8.jpeg"
+  }
+},
+{
+  "model": "store.productgallery",
+  "pk": 3,
+  "fields": {
+    "product": 3,
+    "image": "store/products/-original-imahjsufstd66gqf.webp"
+  }
+},
+{
+  "model": "store.productgallery",
+  "pk": 4,
+  "fields": {
+    "product": 3,
+    "image": "store/products/-original-imahggetsxnmuzsc.webp"
+  }
+},
+{
+  "model": "store.productgallery",
+  "pk": 5,
+  "fields": {
+    "product": 3,
+    "image": "store/products/-original-imahfvuaragh3vgu.webp"
+  }
+},
+{
+  "model": "carts.cartitem",
+  "pk": 2,
+  "fields": {
+    "user": 1,
+    "product": 1,
+    "cart": null,
+    "quantity": 1,
+    "is_active": true,
+    "variations": [
+      3
+    ]
+  }
+},
+{
+  "model": "orders.payment",
+  "pk": 1,
+  "fields": {
+    "user": 7,
+    "payment_id": "COD-2026070913",
+    "payment_method": "Cash On Delivery",
+    "amount_paid": "40800.0",
+    "status": "Pending",
+    "created_at": "2026-07-09T05:32:49.350Z"
+  }
+},
+{
+  "model": "orders.payment",
+  "pk": 2,
+  "fields": {
+    "user": 7,
+    "payment_id": "COD-2026070914",
+    "payment_method": "Cash On Delivery",
+    "amount_paid": "40800.0",
+    "status": "Pending",
+    "created_at": "2026-07-09T05:38:21.191Z"
+  }
+},
+{
+  "model": "orders.payment",
+  "pk": 3,
+  "fields": {
+    "user": 7,
+    "payment_id": "COD-2026070915",
+    "payment_method": "Cash On Delivery",
+    "amount_paid": "61200.0",
+    "status": "Pending",
+    "created_at": "2026-07-09T05:46:20.699Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "payment": null,
+    "order_number": "202607081",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 20400.0,
+    "tax": 400.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": false,
+    "created_at": "2026-07-08T16:35:10.560Z",
+    "updated_at": "2026-07-08T16:35:10.568Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 2,
+  "fields": {
+    "user": 1,
+    "payment": null,
+    "order_number": "202607082",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 20400.0,
+    "tax": 400.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": false,
+    "created_at": "2026-07-08T17:24:40.490Z",
+    "updated_at": "2026-07-08T17:24:40.505Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 3,
+  "fields": {
+    "user": 1,
+    "payment": null,
+    "order_number": "202607083",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 20400.0,
+    "tax": 400.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": false,
+    "created_at": "2026-07-08T17:27:03.520Z",
+    "updated_at": "2026-07-08T17:27:03.537Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 4,
+  "fields": {
+    "user": 1,
+    "payment": null,
+    "order_number": "202607084",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 20400.0,
+    "tax": 400.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": false,
+    "created_at": "2026-07-08T17:27:25.308Z",
+    "updated_at": "2026-07-08T17:27:25.327Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 5,
+  "fields": {
+    "user": 1,
+    "payment": null,
+    "order_number": "202607085",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 20400.0,
+    "tax": 400.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": false,
+    "created_at": "2026-07-08T17:27:59.383Z",
+    "updated_at": "2026-07-08T17:27:59.399Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 6,
+  "fields": {
+    "user": 1,
+    "payment": null,
+    "order_number": "202607086",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 20400.0,
+    "tax": 400.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": false,
+    "created_at": "2026-07-08T17:30:23.609Z",
+    "updated_at": "2026-07-08T17:30:23.623Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 7,
+  "fields": {
+    "user": 1,
+    "payment": null,
+    "order_number": "202607087",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 20400.0,
+    "tax": 400.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": false,
+    "created_at": "2026-07-08T17:30:57.362Z",
+    "updated_at": "2026-07-08T17:30:57.376Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 8,
+  "fields": {
+    "user": 1,
+    "payment": null,
+    "order_number": "202607088",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 20400.0,
+    "tax": 400.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": false,
+    "created_at": "2026-07-08T17:31:34.897Z",
+    "updated_at": "2026-07-08T17:31:34.909Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 9,
+  "fields": {
+    "user": 7,
+    "payment": null,
+    "order_number": "202607099",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 122400.0,
+    "tax": 2400.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": false,
+    "created_at": "2026-07-09T05:02:17.191Z",
+    "updated_at": "2026-07-09T05:02:17.216Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 10,
+  "fields": {
+    "user": 7,
+    "payment": null,
+    "order_number": "2026070910",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 20400.0,
+    "tax": 400.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": false,
+    "created_at": "2026-07-09T05:16:28.963Z",
+    "updated_at": "2026-07-09T05:16:28.994Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 11,
+  "fields": {
+    "user": 7,
+    "payment": null,
+    "order_number": "2026070911",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 40800.0,
+    "tax": 800.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": false,
+    "created_at": "2026-07-09T05:25:37.119Z",
+    "updated_at": "2026-07-09T05:25:37.129Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 12,
+  "fields": {
+    "user": 7,
+    "payment": null,
+    "order_number": "2026070912",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 40800.0,
+    "tax": 800.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": false,
+    "created_at": "2026-07-09T05:28:55.009Z",
+    "updated_at": "2026-07-09T05:28:55.020Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 13,
+  "fields": {
+    "user": 7,
+    "payment": 1,
+    "order_number": "2026070913",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 40800.0,
+    "tax": 800.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": true,
+    "created_at": "2026-07-09T05:32:41.153Z",
+    "updated_at": "2026-07-09T05:32:49.390Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 14,
+  "fields": {
+    "user": 7,
+    "payment": 2,
+    "order_number": "2026070914",
+    "first_name": "Stephen",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 40800.0,
+    "tax": 800.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": true,
+    "created_at": "2026-07-09T05:38:17.370Z",
+    "updated_at": "2026-07-09T05:38:21.235Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 15,
+  "fields": {
+    "user": 7,
+    "payment": 3,
+    "order_number": "2026070915",
+    "first_name": "Anand",
+    "last_name": "Kondeparthi",
+    "phone": "06305989065",
+    "email": "kondeparthistephen@gmail.com",
+    "address_line_1": "Kapra",
+    "address_line_2": "",
+    "country": "India",
+    "state": "Telangana",
+    "city": "Hyderbad",
+    "order_note": "",
+    "order_total": 61200.0,
+    "tax": 1200.0,
+    "status": "New",
+    "ip": "127.0.0.1",
+    "is_ordered": true,
+    "created_at": "2026-07-09T05:46:17.356Z",
+    "updated_at": "2026-07-09T05:46:20.726Z"
+  }
+},
+{
+  "model": "orders.orderproduct",
+  "pk": 1,
+  "fields": {
+    "order": 13,
+    "payment": 1,
+    "user": 7,
+    "product": 1,
+    "quantity": 2,
+    "product_price": 20000.0,
+    "ordered": true,
+    "created_at": "2026-07-09T05:32:49.473Z",
+    "updated_at": "2026-07-09T05:32:49.473Z",
+    "variations": [
+      3
+    ]
+  }
+},
+{
+  "model": "orders.orderproduct",
+  "pk": 2,
+  "fields": {
+    "order": 14,
+    "payment": 2,
+    "user": 7,
+    "product": 1,
+    "quantity": 2,
+    "product_price": 20000.0,
+    "ordered": true,
+    "created_at": "2026-07-09T05:38:21.341Z",
+    "updated_at": "2026-07-09T05:38:21.341Z",
+    "variations": [
+      3
+    ]
+  }
+},
+{
+  "model": "orders.orderproduct",
+  "pk": 3,
+  "fields": {
+    "order": 15,
+    "payment": 3,
+    "user": 7,
+    "product": 2,
+    "quantity": 1,
+    "product_price": 60000.0,
+    "ordered": true,
+    "created_at": "2026-07-09T05:46:20.760Z",
+    "updated_at": "2026-07-09T05:46:20.760Z",
+    "variations": [
+      5,
+      6
+    ]
+  }
+},
+{
+  "model": "admin_honeypot.loginattempt",
+  "pk": 1,
+  "fields": {
+    "username": "admin@test.com",
+    "ip_address": "127.0.0.1",
+    "session_key": null,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0",
+    "timestamp": "2026-07-08T10:23:49.308Z",
+    "path": "/admin/login/?next=/admin/"
+  }
+}
+]

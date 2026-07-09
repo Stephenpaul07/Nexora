@@ -1,0 +1,380 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<section class="py-5 bg-light">
+<div class="container">
+
+{% if not cart_items %}
+
+<div class="text-center py-5">
+
+<i class="fas fa-shopping-cart fa-5x text-muted mb-4"></i>
+
+<h2 class="fw-bold">Your Cart is Empty</h2>
+
+<p class="text-muted mb-4">
+Looks like you haven't added anything yet.
+</p>
+
+<a href="{% url 'store' %}" class="btn btn-primary px-5 py-3 rounded-3">
+Continue Shopping
+</a>
+
+</div>
+
+{% else %}
+
+<div class="row g-4">
+
+<!-- ================= CART ITEMS ================= -->
+
+<div class="col-lg-8">
+
+<div class="card shadow-sm border-0 rounded-4">
+
+<div class="card-header bg-white border-0 py-4">
+
+<h3 class="fw-bold mb-0">
+
+Shopping Cart
+
+</h3>
+
+</div>
+
+<div class="card-body p-0">
+
+{% for cart_item in cart_items %}
+
+<div class="row align-items-center p-4 border-bottom">
+
+<!-- IMAGE -->
+
+<div class="col-md-3 text-center">
+
+<a href="{{ cart_item.product.get_url }}">
+
+<img src="{{ cart_item.product.images.url }}"
+class="img-fluid rounded"
+style="width:130px;height:130px;object-fit:contain;">
+
+</a>
+
+</div>
+
+<!-- PRODUCT -->
+
+<div class="col-md-4">
+
+<a href="{{ cart_item.product.get_url }}"
+class="text-decoration-none text-dark">
+
+<h5 class="fw-bold mb-2">
+
+{{ cart_item.product.product_name }}
+
+</h5>
+
+</a>
+
+{% for item in cart_item.variations.all %}
+
+<p class="text-muted mb-1">
+
+<strong>{{ item.variation_category|capfirst }}</strong> :
+{{ item.variation_value|capfirst }}
+
+</p>
+
+{% endfor %}
+
+</div>
+
+<!-- QUANTITY -->
+
+<div class="col-md-2">
+
+<div class="input-group" style="width:120px;">
+
+<a href="{% url 'remove_cart' cart_item.product.id cart_item.id %}"
+class="btn btn-outline-secondary">
+
+<i class="fas fa-minus"></i>
+
+</a>
+
+<p style="font-size:24px;color:black;">
+    {{ cart_item.quantity }}
+</p>
+
+<form action="{% url 'add_cart' cart_item.product.id %}" method="POST">
+
+{% csrf_token %}
+
+{% for item in cart_item.variations.all %}
+
+<input type="hidden"
+name="{{ item.variation_category|lower }}"
+value="{{ item.variation_value|capfirst }}">
+
+{% endfor %}
+
+<button class="btn btn-outline-secondary">
+
+<i class="fas fa-plus"></i>
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- PRICE -->
+
+<div class="col-md-2">
+
+<h5 class="text-primary fw-bold">
+
+₹ {{ cart_item.sub_total }}
+
+</h5>
+
+<small class="text-muted">
+
+₹ {{ cart_item.product.price }} each
+
+</small>
+
+</div>
+
+<!-- REMOVE -->
+
+<div class="col-md-1 text-end">
+
+<a href="{% url 'remove_cart_item' cart_item.product.id cart_item.id %}"
+onclick="return confirm('Remove this product?')"
+class="btn btn-outline-danger rounded-pill">
+
+<i class="fas fa-trash"></i>
+
+</a>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= ORDER SUMMARY ================= -->
+
+<div class="col-lg-4">
+
+<div class="card shadow-sm border-0 rounded-4 sticky-top" style="top:100px;">
+
+<div class="card-body p-4">
+
+<h4 class="fw-bold mb-4">
+
+Order Summary
+
+</h4>
+
+<div class="d-flex justify-content-between mb-3">
+
+<span class="text-muted">
+
+Subtotal
+
+</span>
+
+<strong>
+
+₹ {{ total }}
+
+</strong>
+
+</div>
+
+<div class="d-flex justify-content-between mb-3">
+
+<span class="text-muted">
+
+Tax
+
+</span>
+
+<strong>
+
+₹ {{ tax }}
+
+</strong>
+
+</div>
+
+<hr>
+
+<div class="d-flex justify-content-between mb-4">
+
+<h5 class="fw-bold">
+
+Grand Total
+
+</h5>
+
+<h4 class="fw-bold text-primary">
+
+₹ {{ grand_total }}
+
+</h4>
+
+</div>
+
+<div class="text-center mb-4">
+
+<img src="{% static 'images/misc/payments.png' %}"
+class="img-fluid"
+style="max-height:35px;">
+
+</div>
+
+<a href="{% url 'checkout' %}"
+class="btn btn-primary w-100 py-3 rounded-3 mb-3">
+
+<i class="fas fa-lock me-2"></i>
+
+Proceed to Checkout
+
+</a>
+
+<a href="{% url 'store' %}"
+class="btn btn-outline-secondary w-100 py-3 rounded-3">
+
+Continue Shopping
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</section>
+
+<style>
+
+.card{
+
+border-radius:18px;
+
+}
+
+.card-header{
+
+border-radius:18px 18px 0 0 !important;
+
+}
+
+img{
+
+max-width:100%;
+
+}
+
+.input-group{
+
+flex-wrap:nowrap;
+
+}
+
+.input-group .btn{
+
+width:40px;
+
+height:40px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.input-group input{
+
+max-width:40px;
+
+font-weight:600;
+
+}
+
+.btn-primary{
+
+background:#5B4BFF;
+
+border:none;
+
+}
+
+.btn-primary:hover{
+
+background:#4635F3;
+
+}
+
+.btn-outline-danger{
+
+border-radius:50%;
+
+width:40px;
+
+height:40px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+@media(max-width:991px){
+
+.sticky-top{
+
+position:relative !important;
+
+top:0 !important;
+
+}
+
+.card-body{
+
+padding:1.5rem !important;
+
+}
+
+}
+
+</style>
+
+{% endblock %}

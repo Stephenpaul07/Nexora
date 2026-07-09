@@ -1,0 +1,421 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="py-5 bg-light">
+
+<div class="container">
+
+<h2 class="text-center fw-bold mb-2">
+
+Review Your Order
+
+</h2>
+
+<p class="text-center text-muted mb-5">
+
+Please verify your details before completing the payment.
+
+</p>
+
+<div class="row g-4">
+
+<!-- ================= LEFT ================= -->
+
+<aside class="col-lg-8">
+
+<!-- Billing -->
+
+<div class="card shadow-sm border-0 rounded-4 mb-4">
+
+<div class="card-header bg-white border-0 py-3">
+
+<h5 class="fw-bold mb-0">
+
+📍 Billing Address
+
+</h5>
+
+</div>
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label class="text-muted small">
+
+Full Name
+
+</label>
+
+<p class="fw-semibold mb-0">
+
+{{ order.full_name }}
+
+</p>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label class="text-muted small">
+
+Phone
+
+</label>
+
+<p class="fw-semibold mb-0">
+
+{{ order.phone }}
+
+</p>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label class="text-muted small">
+
+Email
+
+</label>
+
+<p class="fw-semibold mb-0">
+
+{{ order.email }}
+
+</p>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label class="text-muted small">
+
+Country
+
+</label>
+
+<p class="fw-semibold mb-0">
+
+{{ order.country }}
+
+</p>
+
+</div>
+
+<div class="col-12">
+
+<label class="text-muted small">
+
+Address
+
+</label>
+
+<p class="fw-semibold mb-0">
+
+{{ order.full_address }}
+
+</p>
+
+<p class="text-muted">
+
+{{ order.city }}, {{ order.state }}
+
+</p>
+
+</div>
+
+{% if order.order_note %}
+
+<div class="col-12 mt-3">
+
+<div class="alert alert-light border rounded-3">
+
+<strong>
+
+Order Note
+
+</strong>
+
+<br>
+
+{{ order.order_note }}
+
+</div>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Payment -->
+
+<div class="card shadow-sm border-0 rounded-4 mb-4">
+
+<div class="card-header bg-white border-0 py-3">
+
+<h5 class="fw-bold mb-0">
+
+💳 Payment Method
+
+</h5>
+
+</div>
+
+<div class="card-body">
+
+<div class="d-flex align-items-center">
+
+<i class="fab fa-paypal fa-2x text-primary me-3"></i>
+
+<div>
+
+<h6 class="mb-0">
+
+PayPal
+
+</h6>
+
+<small class="text-muted">
+
+Secure Payment Gateway
+
+</small>
+
+<hr>
+
+<form action="{% url 'cash_on_delivery' %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="order_number" value="{{ order.order_number }}">
+
+    <button type="submit" class="btn btn-success btn-block">
+        Cash on Delivery
+    </button>
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Products -->
+
+<div class="card shadow-sm border-0 rounded-4">
+
+<div class="card-header bg-white border-0 py-3">
+
+<h5 class="fw-bold mb-0">
+
+🛒 Order Items
+
+</h5>
+
+</div>
+
+<div class="card-body">
+
+{% for cart_item in cart_items %}
+
+<div class="d-flex align-items-center border-bottom pb-3 mb-3">
+
+<img
+
+src="{{ cart_item.product.images.url }}"
+
+class="rounded me-3"
+
+style="width:90px;height:90px;object-fit:contain;">
+
+<div class="flex-grow-1">
+
+<h6 class="fw-bold mb-1">
+
+{{ cart_item.product.product_name }}
+
+</h6>
+
+{% for item in cart_item.variations.all %}
+
+<small class="text-muted d-block">
+
+{{ item.variation_category|capfirst }} :
+
+{{ item.variation_value|capfirst }}
+
+</small>
+
+{% endfor %}
+
+<small class="text-muted">
+
+Qty : {{ cart_item.quantity }}
+
+</small>
+
+</div>
+
+<div class="text-end">
+
+<h6 class="fw-bold text-primary">
+
+₹ {{ cart_item.sub_total }}
+
+</h6>
+
+<small class="text-muted">
+
+₹ {{ cart_item.product.price }} each
+
+</small>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</aside>
+<!-- ================= ORDER SUMMARY ================= -->
+
+<aside class="col-lg-4">
+
+<div class="card shadow-sm border-0 rounded-4 sticky-top" style="top:100px;">
+
+<div class="card-body p-4">
+
+<h4 class="fw-bold mb-4">
+🧾 Order Summary
+</h4>
+
+<div class="d-flex justify-content-between mb-3">
+<span class="text-muted">Subtotal</span>
+<strong>₹ {{ total }}</strong>
+</div>
+
+<div class="d-flex justify-content-between mb-3">
+<span class="text-muted">Tax</span>
+<strong>₹ {{ tax }}</strong>
+</div>
+
+<div class="d-flex justify-content-between mb-3">
+<span class="text-muted">Shipping</span>
+<span class="text-success fw-bold">
+FREE
+</span>
+</div>
+
+<hr>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+<h5 class="fw-bold mb-0">
+Grand Total
+</h5>
+
+<h3 class="fw-bold text-primary mb-0">
+₹ {{ grand_total }}
+</h3>
+
+</div>
+
+<div class="text-center mb-4">
+
+<img src="{% static 'images/misc/payments.png' %}"
+class="img-fluid"
+style="max-height:35px;">
+
+<p class="small text-muted mt-2 mb-0">
+🔒 Secure SSL Checkout
+</p>
+
+</div>
+
+<div id="paypal-button-container" class="mb-3"></div>
+
+<div class="alert alert-warning border-0 rounded-3 mb-0">
+
+<strong>Demo Website</strong><br>
+
+Please do not make real payments.
+This PayPal integration is for demonstration purposes only.
+
+</div>
+
+</div>
+
+</div>
+
+</aside>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.card{
+
+border-radius:18px;
+
+}
+
+.card-header{
+
+background:#fff!important;
+
+border:none!important;
+
+}
+
+.text-primary{
+
+color:#5B4BFF!important;
+
+}
+
+.alert-light{
+
+background:#F8FAFC;
+
+}
+
+.sticky-top{
+
+top:100px;
+
+}
+
+@media(max-width:991px){
+
+.sticky-top{
+
+position:relative!important;
+
+top:0!important;
+
+margin-top:20px;
+
+}
+
+}
+
+</style>
+	{% endblock %}

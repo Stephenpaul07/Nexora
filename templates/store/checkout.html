@@ -1,0 +1,385 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="py-5 bg-light">
+<div class="container">
+
+<div class="row g-4">
+
+<!-- ================= BILLING ================= -->
+
+<aside class="col-lg-7">
+
+<div class="card shadow border-0 rounded-4">
+
+<div class="card-body p-4">
+
+<h3 class="fw-bold mb-1">
+
+🛍 Checkout
+
+</h3>
+
+<p class="text-muted mb-4">
+
+Complete your shipping details
+
+</p>
+
+<form action="{% url 'place_order' %}" method="POST">
+
+{% csrf_token %}
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label class="form-label fw-semibold">
+
+First Name
+
+</label>
+
+<input type="text"
+name="first_name"
+class="form-control form-control-lg"
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label class="form-label fw-semibold">
+
+Last Name
+
+</label>
+
+<input type="text"
+name="last_name"
+class="form-control form-control-lg"
+required>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label class="form-label fw-semibold">
+
+Email
+
+</label>
+
+<input type="email"
+name="email"
+class="form-control form-control-lg"
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label class="form-label fw-semibold">
+
+Phone Number
+
+</label>
+
+<input type="text"
+name="phone"
+class="form-control form-control-lg"
+required>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label class="form-label fw-semibold">
+
+Address Line 1
+
+</label>
+
+<input type="text"
+name="address_line_1"
+class="form-control form-control-lg"
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label class="form-label fw-semibold">
+
+Address Line 2
+
+</label>
+
+<input type="text"
+name="address_line_2"
+class="form-control form-control-lg">
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-4 mb-3">
+
+<label class="form-label fw-semibold">
+
+City
+
+</label>
+
+<input type="text"
+name="city"
+class="form-control form-control-lg"
+required>
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<label class="form-label fw-semibold">
+
+State
+
+</label>
+
+<input type="text"
+name="state"
+class="form-control form-control-lg"
+required>
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<label class="form-label fw-semibold">
+
+Country
+
+</label>
+
+<input type="text"
+name="country"
+class="form-control form-control-lg"
+required>
+
+</div>
+
+</div>
+
+<div class="mb-4">
+
+<label class="form-label fw-semibold">
+
+Order Note (Optional)
+
+</label>
+
+<textarea
+name="order_note"
+rows="4"
+class="form-control"
+placeholder="Any delivery instructions..."></textarea>
+
+</div>
+
+<!-- ================= ORDER SUMMARY ================= -->
+
+</aside>
+
+<aside class="col-lg-5">
+
+<div class="card shadow border-0 rounded-4 sticky-top" style="top:100px;">
+
+<div class="card-body p-4">
+
+<h4 class="fw-bold mb-4">
+🛒 Order Summary
+</h4>
+
+{% for cart_item in cart_items %}
+
+<div class="d-flex align-items-center mb-4">
+
+<img src="{{ cart_item.product.images.url }}"
+     class="rounded me-3"
+     style="width:90px;height:90px;object-fit:contain;">
+
+<div class="flex-grow-1">
+
+<h6 class="fw-bold mb-1">
+{{ cart_item.product.product_name }}
+</h6>
+
+{% for item in cart_item.variations.all %}
+<small class="text-muted d-block">
+{{ item.variation_category|capfirst }} :
+{{ item.variation_value|capfirst }}
+</small>
+{% endfor %}
+
+<small class="text-muted">
+Qty : {{ cart_item.quantity }}
+</small>
+
+</div>
+
+<div class="text-end">
+
+<h6 class="fw-bold text-primary mb-0">
+₹ {{ cart_item.sub_total }}
+</h6>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+<hr>
+
+<div class="d-flex justify-content-between mb-2">
+
+<span>Subtotal</span>
+
+<strong>₹ {{ total }}</strong>
+
+</div>
+
+<div class="d-flex justify-content-between mb-2">
+
+<span>Tax</span>
+
+<strong>₹ {{ tax }}</strong>
+
+</div>
+
+<div class="d-flex justify-content-between mb-3">
+
+<span>Shipping</span>
+
+<span class="text-success fw-bold">
+
+FREE
+
+</span>
+
+</div>
+
+<hr>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+<h5 class="fw-bold mb-0">
+
+Grand Total
+
+</h5>
+
+<h4 class="fw-bold text-primary mb-0">
+
+₹ {{ grand_total }}
+
+</h4>
+
+</div>
+
+<div class="text-center mb-4">
+
+<img src="{% static 'images/misc/payments.png' %}"
+class="img-fluid"
+style="max-height:32px;">
+
+<p class="small text-muted mt-2 mb-0">
+
+🔒 Secure SSL Checkout
+
+</p>
+
+</div>
+
+<button type="submit"
+class="btn btn-primary w-100 py-3 rounded-3">
+
+Place Order
+
+</button>
+
+<a href="{% url 'store' %}"
+class="btn btn-outline-secondary w-100 py-3 rounded-3 mt-3">
+
+Continue Shopping
+
+</a>
+
+</div>
+
+</div>
+
+</aside>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+<style>
+
+.form-control,
+.form-control-lg{
+border-radius:12px;
+}
+
+.card{
+border-radius:18px;
+}
+
+.btn-primary{
+background:#5B4BFF;
+border:none;
+}
+
+.btn-primary:hover{
+background:#4635F3;
+}
+
+.btn-outline-secondary{
+border-radius:12px;
+}
+
+label{
+font-weight:600;
+margin-bottom:6px;
+}
+
+@media(max-width:991px){
+
+.sticky-top{
+position:relative !important;
+top:0 !important;
+margin-top:25px;
+}
+
+}
+
+</style>
+
+{% endblock %}

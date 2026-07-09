@@ -1,0 +1,643 @@
+{% load static %}
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+    🚚 Free Shipping on Orders Above ₹999 &nbsp; | &nbsp; Secure Payments & Easy Returns
+</div>
+
+<header class="main-header">
+
+<div class="container">
+
+<nav class="navbar navbar-expand-lg py-3">
+
+<!-- ================= LOGO ================= -->
+
+<a href="{% url 'home' %}" class="logo">
+
+<span class="logo-primary">NEX</span>ORA
+
+</a>
+
+<button class="navbar-toggler border-0 shadow-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMain">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="navbarMain">
+
+<!-- ================= CATEGORY ================= -->
+
+<div class="dropdown ms-lg-4">
+
+<button
+
+class="category-btn dropdown-toggle"
+
+type="button"
+
+data-bs-toggle="dropdown">
+
+<i class="fas fa-bars me-2"></i>
+
+Categories
+
+</button>
+
+<div class="dropdown-menu shadow-lg border-0 rounded-4 p-2">
+
+<a class="dropdown-item rounded-3"
+
+href="{% url 'store' %}">
+
+<i class="fas fa-store me-2"></i>
+
+All Products
+
+</a>
+
+{% for category in links %}
+
+<a
+
+class="dropdown-item rounded-3"
+
+href="{{ category.get_url }}">
+
+{{ category.category_name }}
+
+</a>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+<!-- ================= SEARCH ================= -->
+
+<form
+
+action="{% url 'search' %}"
+
+method="GET"
+
+class="search-box flex-grow-1 mx-lg-4 my-3 my-lg-0">
+
+<input
+
+type="text"
+
+name="keyword"
+
+placeholder="Search for products..."
+
+class="form-control"
+
+required>
+
+<button type="submit">
+
+<i class="fas fa-search"></i>
+
+</button>
+
+</form>
+<!-- ================= RIGHT SIDE ================= -->
+
+<div class="navbar-icons ms-auto">
+
+{% if user.id is None %}
+
+<div class="auth-buttons">
+
+<a href="{% url 'login' %}" class="login-btn">
+
+<i class="far fa-user me-2"></i>
+
+Login
+
+</a>
+
+<a href="{% url 'register' %}" class="register-btn">
+
+Register
+
+</a>
+
+</div>
+
+{% else %}
+
+<div class="dropdown">
+
+<a
+
+class="user-btn dropdown-toggle"
+
+href="#"
+
+role="button"
+
+data-bs-toggle="dropdown"
+
+aria-expanded="false">
+
+<div class="user-avatar">
+
+{{ user.first_name|first|upper }}
+
+</div>
+
+<span>
+
+{{ user.first_name }}
+
+</span>
+
+</a>
+
+<ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4">
+
+<li>
+
+<a class="dropdown-item"
+
+href="{% url 'dashboard' %}">
+
+<i class="fas fa-user-circle me-2"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a class="dropdown-item"
+
+href="{% url 'logout' %}">
+
+<i class="fas fa-sign-out-alt me-2"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+{% endif %}
+
+<a href="{% url 'cart' %}" class="cart-btn">
+
+<i class="fas fa-shopping-cart"></i>
+
+<span class="cart-count">
+
+{{ cart_count }}
+
+</span>
+
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+<style>
+/* ===================== ANNOUNCEMENT ===================== */
+
+.announcement-bar{
+    background:#111827;
+    color:#fff;
+    text-align:center;
+    padding:10px 0;
+    font-size:14px;
+    font-weight:500;
+}
+
+/* ===================== HEADER ===================== */
+
+.main-header{
+
+position:sticky;
+top:0;
+z-index:999;
+
+background:rgba(255,255,255,.94);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid #ECECEC;
+
+box-shadow:0 10px 35px rgba(0,0,0,.05);
+
+}
+
+/* ===================== LOGO ===================== */
+
+.logo{
+
+font-size:32px;
+font-weight:800;
+letter-spacing:.5px;
+
+text-decoration:none;
+
+color:#111827;
+
+transition:.3s;
+
+}
+
+.logo:hover{
+
+transform:scale(1.03);
+
+color:#111827;
+
+}
+
+.logo-primary{
+
+color:#5B4BFF;
+
+}
+
+/* ===================== CATEGORY ===================== */
+
+.category-btn{
+
+height:48px;
+
+padding:0 18px;
+
+border-radius:14px;
+
+border:1px solid #E5E7EB;
+
+background:white;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.category-btn:hover{
+
+background:#5B4BFF;
+
+color:white;
+
+}
+
+.dropdown-menu{
+
+min-width:240px;
+
+padding:10px;
+
+}
+
+.dropdown-item{
+
+padding:12px 15px;
+
+font-weight:500;
+
+transition:.25s;
+
+}
+
+.dropdown-item:hover{
+
+background:#EEF2FF;
+
+color:#5B4BFF;
+
+}
+
+/* ===================== SEARCH ===================== */
+
+.search-box{
+
+position:relative;
+
+max-width:650px;
+
+}
+
+.search-box input{
+
+height:50px;
+
+border-radius:15px;
+
+padding-left:18px;
+
+padding-right:58px;
+
+border:1px solid #E5E7EB;
+
+transition:.3s;
+
+box-shadow:none;
+
+}
+
+.search-box input:focus{
+
+border-color:#5B4BFF;
+
+box-shadow:0 0 0 .2rem rgba(91,75,255,.12);
+
+}
+
+.search-box button{
+
+position:absolute;
+
+top:7px;
+
+right:7px;
+
+width:36px;
+
+height:36px;
+
+border:none;
+
+border-radius:12px;
+
+background:#5B4BFF;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.search-box button:hover{
+
+background:#4635F3;
+
+}
+
+/* ===================== RIGHT SIDE ===================== */
+
+.navbar-icons{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+/* LOGIN */
+
+.auth-buttons{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+.login-btn{
+
+padding:10px 18px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-weight:600;
+
+color:#111827;
+
+transition:.3s;
+
+}
+
+.login-btn:hover{
+
+background:#F3F4F6;
+
+color:#5B4BFF;
+
+}
+
+.register-btn{
+
+padding:10px 20px;
+
+background:#5B4BFF;
+
+color:white;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.register-btn:hover{
+
+background:#4635F3;
+
+color:white;
+
+}
+
+/* USER */
+
+.user-btn{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+text-decoration:none;
+
+font-weight:600;
+
+color:#111827;
+
+}
+
+.user-avatar{
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+background:#5B4BFF;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:white;
+
+font-weight:700;
+
+}
+
+/* CART */
+
+.cart-btn{
+
+position:relative;
+
+width:48px;
+
+height:48px;
+
+border-radius:14px;
+
+background:#5B4BFF;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:white;
+
+font-size:18px;
+
+transition:.3s;
+
+text-decoration:none;
+
+}
+
+.cart-btn:hover{
+
+background:#4635F3;
+
+color:white;
+
+transform:translateY(-2px);
+
+}
+
+.cart-count{
+
+position:absolute;
+
+top:-6px;
+
+right:-6px;
+
+width:20px;
+
+height:20px;
+
+border-radius:50%;
+
+background:#EF4444;
+
+color:white;
+
+font-size:11px;
+
+font-weight:700;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+/* ===================== MOBILE ===================== */
+
+@media(max-width:991px){
+
+.navbar-icons{
+
+margin-top:20px;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:15px;
+
+}
+
+.search-box{
+
+margin:20px 0;
+
+max-width:100%;
+
+}
+
+.auth-buttons{
+
+width:100%;
+
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+.login-btn,
+
+.register-btn{
+
+text-align:center;
+
+}
+
+.category-btn{
+
+width:100%;
+
+margin-top:15px;
+
+}
+
+.logo{
+
+font-size:28px;
+
+}
+
+}
+</style>

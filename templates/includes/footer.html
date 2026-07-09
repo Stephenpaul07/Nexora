@@ -1,0 +1,330 @@
+<footer class="footer-modern">
+
+<div class="container">
+
+<div class="row gy-5">
+
+<!-- Brand -->
+
+<div class="col-lg-4">
+
+<h3 class="footer-logo">
+NEXORA
+</h3>
+
+<p class="footer-text">
+
+Premium shopping experience built with Django.
+Discover quality products, secure checkout, and fast delivery.
+
+</p>
+
+<div class="social-icons">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-x-twitter"></i></a>
+
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+</div>
+
+</div>
+
+<!-- Quick Links -->
+
+<div class="col-lg-2">
+
+<h5>Shop</h5>
+
+<ul class="footer-links">
+
+<li><a href="{% url 'home' %}">Home</a></li>
+
+<li><a href="{% url 'store' %}">Store</a></li>
+
+<li><a href="#">Categories</a></li>
+
+<li><a href="#">Offers</a></li>
+
+</ul>
+
+</div>
+
+<!-- Support -->
+
+<div class="col-lg-3">
+
+<h5>Support</h5>
+
+<ul class="footer-links">
+
+<li><a href="#">Contact</a></li>
+
+<li><a href="#">Privacy Policy</a></li>
+
+<li><a href="#">Terms of Service</a></li>
+
+<li><a href="#">Help Center</a></li>
+
+</ul>
+
+</div>
+
+<!-- Contact -->
+
+<div class="col-lg-3">
+
+<h5>Contact</h5>
+
+<p class="footer-contact">
+
+📧 support@nexora.com
+
+</p>
+
+<p class="footer-contact">
+
+📞 +91 98765 43210
+
+</p>
+
+<p class="footer-contact">
+
+📍 Hyderabad, India
+
+</p>
+
+<div class="payment-icons">
+
+<i class="fab fa-cc-visa"></i>
+
+<i class="fab fa-cc-mastercard"></i>
+
+<i class="fab fa-cc-paypal"></i>
+
+<i class="fab fa-cc-apple-pay"></i>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="footer-divider">
+
+<div class="footer-bottom">
+
+<div>
+
+© 2026 NEXORA. All Rights Reserved.
+
+</div>
+
+<div>
+
+Built with ❤️ using Django
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<style>
+
+.footer-modern{
+
+margin-top:80px;
+
+background:#111827;
+
+color:#E5E7EB;
+
+padding:70px 0 30px;
+
+}
+
+.footer-logo{
+
+font-size:34px;
+
+font-weight:800;
+
+color:white;
+
+margin-bottom:18px;
+
+}
+
+.footer-text{
+
+color:#9CA3AF;
+
+line-height:1.8;
+
+}
+
+.footer-modern h5{
+
+color:white;
+
+margin-bottom:20px;
+
+font-weight:700;
+
+}
+
+.footer-links{
+
+list-style:none;
+
+padding:0;
+
+}
+
+.footer-links li{
+
+margin-bottom:12px;
+
+}
+
+.footer-links a{
+
+color:#9CA3AF;
+
+text-decoration:none;
+
+}
+
+.footer-links a:hover{
+
+color:white;
+
+padding-left:5px;
+
+}
+
+.footer-contact{
+
+color:#9CA3AF;
+
+margin-bottom:12px;
+
+}
+
+.social-icons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.social-icons a{
+
+width:42px;
+
+height:42px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:#1F2937;
+
+color:white;
+
+font-size:18px;
+
+}
+
+.social-icons a:hover{
+
+background:#4F46E5;
+
+transform:translateY(-4px);
+
+}
+
+.payment-icons{
+
+margin-top:25px;
+
+display:flex;
+
+gap:15px;
+
+font-size:32px;
+
+color:white;
+
+}
+
+.footer-divider{
+
+margin:45px 0 25px;
+
+border-color:#374151;
+
+}
+
+.footer-bottom{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+color:#9CA3AF;
+
+font-size:15px;
+
+}
+
+@media(max-width:768px){
+
+.footer-bottom{
+
+text-align:center;
+
+gap:10px;
+
+justify-content:center;
+
+}
+
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+$('.thumb a').click(function(e){
+
+e.preventDefault();
+
+$('.mainImage img').attr('src',$(this).attr("href"));
+
+});
+
+});
+
+</script>

@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================
+   HELPERS
+========================= */
+.bg-white {
+    background-color: #fff;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.shadow-sm {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.rounded {
+    border-radius: 8px;
+}
+
+/* =========================
+   ALERTS
+========================= */
+#messages {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.alert {
+    position: relative;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.alert-success {
+    background-color: #eafaf1;
+    color: #0f5132;
+    border-color: #badbcc;
+}
+
+.alert-danger,
+.alert-error {
+    background-color: #fdeaea;
+    color: #842029;
+    border-color: #f5c2c7;
+}
+
+.alert-warning {
+    background-color: #fff8e5;
+    color: #856404;
+    border-color: #ffe69c;
+}
+
+.alert-info {
+    background-color: #e8f4fd;
+    color: #055160;
+    border-color: #b6effb;
+}
+
+.alert .close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    border: none;
+    background: none;
+    font-size: 22px;
+    line-height: 1;
+    color: inherit;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.alert .close:hover {
+    opacity: 1;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.section-footer {
+    background: #ffffff;
+    padding-top: 25px;
+    margin-top: 50px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.footer-bottom {
+    padding: 22px 0;
+    align-items: center;
+    font-size: 14px;
+}
+
+.footer-bottom p,
+.footer-bottom span {
+    margin-bottom: 0;
+    color: #6c757d;
+}
+
+.footer-bottom .px-2 {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.footer-bottom i {
+    font-size: 28px;
+    margin-left: 10px;
+    color: #6c757d;
+    transition: 0.3s ease;
+}
+
+.footer-bottom i:hover {
+    color: #0d6efd;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   CARD / BOX STYLES
+========================= */
+.box {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .footer-bottom {
+        text-align: center;
+    }
+
+    .footer-bottom .col-md-2,
+    .footer-bottom .col-md-8 {
+        margin-bottom: 15px;
+    }
+
+    .text-md-center,
+    .text-md-right {
+        text-align: center !important;
+    }
+
+    .footer-bottom i {
+        margin: 0 6px;
+    }
+}
