@@ -7,7 +7,7 @@ A modern full-stack e-commerce web application built with **Django** and **Postg
 ## 🌐 Live Demo
 
 🔗 **Live Website:** 
-https://nexora-ecommerce.onrender.com/
+https://nexora-kx2i.onrender.com/
 
 ## 💻 GitHub Repository
 
